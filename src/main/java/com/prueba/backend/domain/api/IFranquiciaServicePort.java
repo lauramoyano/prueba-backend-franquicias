@@ -6,4 +6,6 @@ public interface IFranquiciaServicePort {
 
     Franquicia create(Franquicia franquicia);
 
+    Franquicia modificarNombre(Long idFranquicia, String nombre);
+
 }

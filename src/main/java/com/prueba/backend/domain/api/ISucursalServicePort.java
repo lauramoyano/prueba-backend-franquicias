@@ -4,5 +4,7 @@ import com.prueba.backend.domain.models.Sucursal;
 
 public interface ISucursalServicePort {
 
-    Sucursal create(Long idFranquicia, Sucursal sucursal);
+    Sucursal create( Sucursal sucursal);
+
+    Sucursal modificarNombre(Long idSucursal, String nombre);
 }

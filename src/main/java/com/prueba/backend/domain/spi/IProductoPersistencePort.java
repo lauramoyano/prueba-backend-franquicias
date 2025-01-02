@@ -6,11 +6,16 @@ import java.util.List;
 
 public interface IProductoPersistencePort {
 
-    Producto create(Producto producto);
+    Producto save(Producto producto);
 
     Producto modificarStock(Long idProducto, Integer cantidad);
 
     Producto eliminarProducto(Long idProducto);
 
-    List<Producto> listarProductosConMasStockPorFranquicia(Long idFranquicia);
+    Producto modificarNombre(Long idProducto, String nombre);
+
+    List<Producto> findBySucursalId(Long idSucursal);
+
+    List<Producto> findAll();
+
 }

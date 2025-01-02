@@ -1,37 +1,24 @@
 package com.prueba.backend.domain.models;
 
+import lombok.Builder;
+import lombok.Getter;
+import lombok.Setter;
+
+@Builder
+@Getter
+@Setter
 public class Producto {
-    private Long id;
+    private Long idProducto;
     private String nombre;
     private Integer stock;
+    private Long idSucursal;
 
-    public Producto(String nombre, Integer stock) {
+    public Producto(String nombre, Integer stock, Long idSucursal) {
         this.nombre = nombre;
         this.stock = stock;
+        this.idSucursal = idSucursal;
     }
 
-    public Long getId() {
-        return id;
-    }
 
-    public void setId(Long id) {
-        this.id = id;
-    }
-
-    public String getNombre() {
-        return nombre;
-    }
-
-    public void setNombre(String nombre) {
-        this.nombre = nombre;
-    }
-
-    public Integer getStock() {
-        return stock;
-    }
-
-    public void setStock(Integer stock) {
-        this.stock = stock;
-    }
 
 }
