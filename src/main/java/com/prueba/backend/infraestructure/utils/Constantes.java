@@ -22,5 +22,10 @@ public class Constantes {
     //mappers
     public static final String SPRING_COMPONENT_MODEL = "spring";
 
+    //Path
+    public static final String PATH_SUCURSAL = "/sucursal";
+    public static final String PATH_PRODUCTO = "/producto";
+    public static final String PATH_FRANQUICIA = "/franquicia";
+
 
 }

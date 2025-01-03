@@ -6,9 +6,10 @@ import com.prueba.backend.infraestructure.entities.FranquiciaEntity;
 import com.prueba.backend.infraestructure.mappers.IFranquiciaMapper;
 import com.prueba.backend.infraestructure.repositories.IFranquiciaRepository;
 import lombok.RequiredArgsConstructor;
+import org.springframework.stereotype.Component;
+import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
-import java.util.List;
 
 @Transactional
 @RequiredArgsConstructor

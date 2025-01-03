@@ -5,18 +5,15 @@ import com.prueba.backend.domain.models.Producto;
 import com.prueba.backend.domain.models.Sucursal;
 import com.prueba.backend.domain.spi.IProductoPersistencePort;
 import com.prueba.backend.domain.spi.ISucursalPersistencePort;
+import lombok.RequiredArgsConstructor;
 
 import java.util.List;
-
+@RequiredArgsConstructor
 public class ProductoUseCase implements IProductoServicePort {
 
     private final IProductoPersistencePort iProductoPersistencePort;
     private final ISucursalPersistencePort iSucursalPersistencePort;
 
-    public ProductoUseCase(IProductoPersistencePort iProductoPersistencePort, ISucursalPersistencePort iSucursalPersistencePort) {
-        this.iProductoPersistencePort = iProductoPersistencePort;
-        this.iSucursalPersistencePort = iSucursalPersistencePort;
-    }
 
     @Override
     public Producto create( Producto producto) {
