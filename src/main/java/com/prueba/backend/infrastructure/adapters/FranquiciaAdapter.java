@@ -6,6 +6,8 @@ import com.prueba.backend.infrastructure.entities.FranquiciaEntity;
 import com.prueba.backend.infrastructure.mappers.IFranquiciaMapper;
 import com.prueba.backend.infrastructure.repositories.IFranquiciaRepository;
 import lombok.RequiredArgsConstructor;
+import org.springframework.stereotype.Component;
+import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 
