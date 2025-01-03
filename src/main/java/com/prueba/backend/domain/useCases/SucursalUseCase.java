@@ -13,8 +13,6 @@ public class SucursalUseCase implements ISucursalServicePort {
     private final ISucursalPersistencePort iSucursalPersistencePort;
     private final IFranquiciaPersistencePort franquiciaPersistencePort;
 
-
-
     @Override
     public Sucursal create( Sucursal sucursal) {
         if (validarCamposSucursal(sucursal)) {

@@ -16,7 +16,7 @@ public class SucursalController {
     private final SucursalService sucursalService;
 
     @PostMapping("/create")
-    public ResponseEntity<SucursalDto> createSucursal(SucursalDto sucursalDto) {
+    public ResponseEntity<SucursalDto> createSucursal(@RequestBody SucursalDto sucursalDto) {
         return ResponseEntity.ok(sucursalService.createSucursal(sucursalDto));
     }
 

@@ -19,6 +19,7 @@ public class SucursalService implements ISucursalService {
 
     @Override
     public SucursalDto createSucursal(SucursalDto sucursalDto) {
+        SucursalDto sucursalDto1 = sucursalDtoMapper.toSucursalDto(sucursalServicePort.create(sucursalDtoMapper.toSucursal(sucursalDto)));
         return sucursalDtoMapper.toSucursalDto(sucursalServicePort.create(sucursalDtoMapper.toSucursal(sucursalDto)));
     }
 
