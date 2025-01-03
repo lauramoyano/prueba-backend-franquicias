@@ -1,14 +1,13 @@
-package com.prueba.backend.infraestructure.adapters;
+package com.prueba.backend.infrastructure.adapters;
 
 import com.prueba.backend.domain.models.Franquicia;
 import com.prueba.backend.domain.spi.IFranquiciaPersistencePort;
-import com.prueba.backend.infraestructure.entities.FranquiciaEntity;
-import com.prueba.backend.infraestructure.mappers.IFranquiciaMapper;
-import com.prueba.backend.infraestructure.repositories.IFranquiciaRepository;
+import com.prueba.backend.infrastructure.entities.FranquiciaEntity;
+import com.prueba.backend.infrastructure.mappers.IFranquiciaMapper;
+import com.prueba.backend.infrastructure.repositories.IFranquiciaRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.transaction.annotation.Transactional;
 
-import java.util.List;
 
 @Transactional
 @RequiredArgsConstructor

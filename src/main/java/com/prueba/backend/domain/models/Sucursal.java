@@ -1,20 +1,17 @@
 package com.prueba.backend.domain.models;
 
-import lombok.Builder;
-import lombok.Getter;
-import lombok.Setter;
+import lombok.*;
 
-@Builder
 @Getter
 @Setter
+@AllArgsConstructor
+@NoArgsConstructor
+@Builder
 public class Sucursal {
     private Long idSucursal;
     private String nombre;
     private Long idFranquicia;
 
-    public Sucursal(String nombre, Long idFranquicia) {
-        this.nombre = nombre;
-        this.idFranquicia = idFranquicia;
-    }
+
 
 }

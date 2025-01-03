@@ -5,16 +5,15 @@ import com.prueba.backend.domain.models.Franquicia;
 import com.prueba.backend.domain.models.Sucursal;
 import com.prueba.backend.domain.spi.IFranquiciaPersistencePort;
 import com.prueba.backend.domain.spi.ISucursalPersistencePort;
+import lombok.RequiredArgsConstructor;
 
+@RequiredArgsConstructor
 public class SucursalUseCase implements ISucursalServicePort {
 
     private final ISucursalPersistencePort iSucursalPersistencePort;
     private final IFranquiciaPersistencePort franquiciaPersistencePort;
 
-    public SucursalUseCase(ISucursalPersistencePort iSucursalPersistencePort, IFranquiciaPersistencePort franquiciaPersistencePort) {
-        this.iSucursalPersistencePort = iSucursalPersistencePort;
-        this.franquiciaPersistencePort = franquiciaPersistencePort;
-    }
+
 
     @Override
     public Sucursal create( Sucursal sucursal) {

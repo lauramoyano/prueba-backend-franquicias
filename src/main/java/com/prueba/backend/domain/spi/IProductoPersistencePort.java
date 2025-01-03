@@ -16,6 +16,8 @@ public interface IProductoPersistencePort {
 
     List<Producto> findBySucursalId(Long idSucursal);
 
+    Producto findProductoConMasStockPorSucursal(Long idSucursal);
+
     List<Producto> findAll();
 
 }

@@ -1,10 +1,10 @@
-package com.prueba.backend.infraestructure.adapters;
+package com.prueba.backend.infrastructure.adapters;
 
 import com.prueba.backend.domain.models.Producto;
 import com.prueba.backend.domain.spi.IProductoPersistencePort;
-import com.prueba.backend.infraestructure.entities.ProductoEntity;
-import com.prueba.backend.infraestructure.mappers.IProductoMapper;
-import com.prueba.backend.infraestructure.repositories.IProductoRepository;
+import com.prueba.backend.infrastructure.entities.ProductoEntity;
+import com.prueba.backend.infrastructure.mappers.IProductoMapper;
+import com.prueba.backend.infrastructure.repositories.IProductoRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -59,5 +59,11 @@ public class ProductoAdapter implements IProductoPersistencePort {
             return productoEntities.stream()
                     .map(productoMapper::toProducto)
                     .toList();
+        }
+
+        @Override
+        public Producto findProductoConMasStockPorSucursal(Long idSucursal) {
+            ProductoEntity productoEntity = productoRepository.findProductoConMasStockPorSucursal(idSucursal);
+            return productoMapper.toProducto(productoEntity);
         }
 }

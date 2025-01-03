@@ -1,19 +1,18 @@
 package com.prueba.backend.domain.models;
 
-import lombok.Builder;
-import lombok.Getter;
-import lombok.Setter;
+import lombok.*;
 
+
+@Setter
+@AllArgsConstructor
+@NoArgsConstructor
 @Builder
 @Getter
-@Setter
 public class Franquicia {
-    private Long idFranquicia;
-    private String nombre;
 
-    public Franquicia(String nombre) {
-        this.nombre = nombre;
-    }
+
+    private Long id;
+    private String nombre;
 
 
 }

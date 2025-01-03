@@ -1,10 +1,10 @@
-package com.prueba.backend.infraestructure.adapters;
+package com.prueba.backend.infrastructure.adapters;
 
 import com.prueba.backend.domain.models.Sucursal;
 import com.prueba.backend.domain.spi.ISucursalPersistencePort;
-import com.prueba.backend.infraestructure.entities.SucursalEntity;
-import com.prueba.backend.infraestructure.mappers.ISucursalMapper;
-import com.prueba.backend.infraestructure.repositories.ISucursalRepository;
+import com.prueba.backend.infrastructure.entities.SucursalEntity;
+import com.prueba.backend.infrastructure.mappers.ISucursalMapper;
+import com.prueba.backend.infrastructure.repositories.ISucursalRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.transaction.annotation.Transactional;
 

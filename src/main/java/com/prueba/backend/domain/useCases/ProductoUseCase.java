@@ -5,18 +5,16 @@ import com.prueba.backend.domain.models.Producto;
 import com.prueba.backend.domain.models.Sucursal;
 import com.prueba.backend.domain.spi.IProductoPersistencePort;
 import com.prueba.backend.domain.spi.ISucursalPersistencePort;
+import lombok.RequiredArgsConstructor;
 
+import java.util.ArrayList;
 import java.util.List;
-
+@RequiredArgsConstructor
 public class ProductoUseCase implements IProductoServicePort {
 
     private final IProductoPersistencePort iProductoPersistencePort;
     private final ISucursalPersistencePort iSucursalPersistencePort;
 
-    public ProductoUseCase(IProductoPersistencePort iProductoPersistencePort, ISucursalPersistencePort iSucursalPersistencePort) {
-        this.iProductoPersistencePort = iProductoPersistencePort;
-        this.iSucursalPersistencePort = iSucursalPersistencePort;
-    }
 
     @Override
     public Producto create( Producto producto) {
@@ -55,12 +53,21 @@ public class ProductoUseCase implements IProductoServicePort {
         return productoEliminado;
     }
 
+
     @Override
     public List<Producto> listarProductosConMasStockPorFranquicia(Long idFranquicia) {
-        List<Producto> productos = iProductoPersistencePort.findAll();
-        return productos;
-    }
+        List<Sucursal> sucursales = iSucursalPersistencePort.findByFranquiciaId(idFranquicia);
+        List<Producto> productosConMasStock = new ArrayList<>();
 
+        for (Sucursal sucursal : sucursales) {
+            Producto productoConMasStock = iProductoPersistencePort.findProductoConMasStockPorSucursal(sucursal.getIdSucursal());
+            if (productoConMasStock != null) {
+                productosConMasStock.add(productoConMasStock);
+            }
+        }
+
+        return productosConMasStock;
+    }
     @Override
     public Producto modificarNombre(Long idProducto, String nombre) {
         if (nombre == null || nombre.isEmpty()) {
